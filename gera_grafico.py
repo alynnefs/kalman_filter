@@ -25,11 +25,12 @@ x = [c for c in range(len(entrada))]
 print len(entrada)
 print len(saida)
 
-plt.plot(x, saida, linestyle='--', color='b', marker='s', linewidth=3.0)
-plt.plot(x, entrada, linestyle='--', color='r', marker='s', linewidth=3.0)
 plt.plot(x, real, linestyle='--', color='g', marker='s', linewidth=3.0)
+plt.plot(x, entrada, linestyle='--', color='r', marker='s', linewidth=3.0)
+plt.plot(x, saida, linestyle='--', color='b', marker='s', linewidth=3.0)
 
-plt.axis([0,50,0,100])
+
+plt.axis([0,50,0,50])
 
 plt.xlabel(u'Tempo')
 plt.ylabel(u'Valores')

@@ -5,29 +5,30 @@
 
 double Q = 0.00001;
 double R = 0.1;
-double P = 1, X = 0, K;
-int result;
+double P = 1.0, X = 3.0, K;
+double result;
 
 void measurementUpdate(){
+	
  	K = (P + Q) / (P + Q + R);
- 	P = R + K;
+ 	P = R * (P + Q) / (R + P + Q);
 }
 
 
 double update(double measurement){
 	
-	 measurementUpdate();
  	double result = X + (measurement - X) * K;
+	measurementUpdate();
  	X = result;
  	return result;
 }
 
 int main(int argc, char *argv[]) {
 
-char filename[30],file_out[30];
-   if (argc != 3)
+char filename[30];
+   if (argc != 2)
    { 
-      printf("Comando inválido\n");
+      printf("error\n");
       return 1;   
    }
     strcpy(filename, argv[1]);
@@ -36,13 +37,8 @@ char filename[30],file_out[30];
     FILE *myFile;
     myFile = fopen(filename, "r");
 
-    strcpy(file_out, argv[2]);
-    strcat (file_out, ".txt");
 
-    FILE *myFileOut;
-    myFileOut = fopen(file_out, "w");
-
-    float data[800];
+    float data[100];
     int i;
 
     if (myFile == NULL)
@@ -51,18 +47,23 @@ char filename[30],file_out[30];
         exit(0);
     }
 
-    for (i = 0; i < 800; i++)
+    for (i = 0; i < 60; i++)
     {
-        fscanf(myFile, "%f,", &data[i] );
+        fscanf(myFile, "\n %f", &data[i] );
 
     }
 
     fclose(myFile);
 
-    for (i = 0; i < 800; i++){
-	result = rint(update(data[i]));
-	fprintf(myFileOut, "%d\n", result); //result é int
+FILE *out;
+out = fopen("saida.txt", "w");
+ 
+
+    for (i = 0; i < 60; i++){
+	result = update(data[i]);
+	fprintf(out, "%.2f \n", result);
     }
-//	fclose(file_out);
-	return 0;
+
+   
+  return 0;
 }
