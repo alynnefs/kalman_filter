@@ -5,7 +5,7 @@ sudo pip install scipy numpy matplotlib
 
 sudo apt-get install python-tk
 
-gcc kalman.c -lm -o kalman
+gcc kalman.c -lm -o kalmancomp
 
 python gerador.py 3000 real input
 
