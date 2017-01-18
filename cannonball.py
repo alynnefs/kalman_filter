@@ -140,14 +140,3 @@ for i in range (iterations):
         arq.write(str(round(ny[i],2)))
         arq.write('\n')    
 arq.close()
-
-# Plot all the results we got.
-
-'''
-pylab.plot(x,y,'-',nx,ny,':')
-pylab.xlabel('X position')
-pylab.ylabel('Y position')
-pylab.title('Measurement of a Cannonball in Flight')
-pylab.legend(('true','measured'))
-pylab.show()
-'''
