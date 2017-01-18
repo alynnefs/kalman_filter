@@ -38,7 +38,7 @@ B    = numpy.matrix([0]) # matriz de controle
 Q    = numpy.matrix([0.00001]) # erro estimado no processo
 R    = numpy.matrix([0.1]) # erro estimado nas medidas
 xhat = numpy.matrix([3]) # estimativa inicial do estado
-P    = numpy.matrix([1]) # estimatica de covariância inicial
+P    = numpy.matrix([1]) # estimativa de covariância inicial
 
 voltmeter = Voltmeter(1.25,0.25)
 
