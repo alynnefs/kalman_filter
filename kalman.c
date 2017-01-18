@@ -42,7 +42,7 @@ char filename[30],file_out[30];
     FILE *myFileOut;
     myFileOut = fopen(file_out, "w");
 
-    float data[800];
+    float data[144];
     int i;
 
     if (myFile == NULL)
@@ -51,7 +51,7 @@ char filename[30],file_out[30];
         exit(0);
     }
 
-    for (i = 0; i < 800; i++)
+    for (i = 0; i < 144; i++)
     {
         fscanf(myFile, "%f,", &data[i] );
 
@@ -59,7 +59,7 @@ char filename[30],file_out[30];
 
     fclose(myFile);
 
-    for (i = 0; i < 800; i++){
+    for (i = 0; i < 144; i++){
 	result = rint(update(data[i]));
 	fprintf(myFileOut, "%d\n", result); //result é int
     }

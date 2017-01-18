@@ -30,7 +30,7 @@ plt.plot(x, entrada, linestyle='--', color='r', marker='s', linewidth=3.0)
 plt.plot(x, saida, linestyle='--', color='b', marker='s', linewidth=3.0)
 
 
-plt.axis([0,50,0,50])
+plt.axis([0,300,0,300])
 
 plt.xlabel(u'Tempo')
 plt.ylabel(u'Valores')

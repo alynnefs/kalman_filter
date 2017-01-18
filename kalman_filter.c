@@ -3,9 +3,14 @@
 #include <string.h>
 #include <math.h>
 
-double Q = 0.00001;
-double R = 0.1;
-double P = 1.0, X = 3.0, K;
+
+double Q = 0.0;
+double R = 0.2;
+double P = 1.0, X = 0.0, K;
+
+//double Q = 0.00001;
+//double R = 0.1;
+//double P = 1.0, X = 3.0, K;
 double result;
 
 void measurementUpdate(){
@@ -26,7 +31,7 @@ double update(double measurement){
 int main(int argc, char *argv[]) {
 
 char filename[30];
-   if (argc != 2)
+   if (argc != 3)
    { 
       printf("error\n");
       return 1;   
@@ -37,8 +42,14 @@ char filename[30];
     FILE *myFile;
     myFile = fopen(filename, "r");
 
+    strcpy(filename, argv[2]);
+    strcat (filename, ".txt");
 
-    float data[100];
+    FILE *out;
+    out = fopen(filename, "w");
+
+
+    float data[800];
     int i;
 
     if (myFile == NULL)
@@ -47,7 +58,7 @@ char filename[30];
         exit(0);
     }
 
-    for (i = 0; i < 60; i++)
+    for (i = 0; i < 800; i++)
     {
         fscanf(myFile, "\n %f", &data[i] );
 
@@ -55,11 +66,8 @@ char filename[30];
 
     fclose(myFile);
 
-FILE *out;
-out = fopen("saida.txt", "w");
- 
 
-    for (i = 0; i < 60; i++){
+    for (i = 0; i < 800; i++){
 	result = update(data[i]);
 	fprintf(out, "%.2f \n", result);
     }
