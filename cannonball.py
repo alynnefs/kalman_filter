@@ -6,15 +6,21 @@
 # Note: This code is part of a larger tutorial "Kalman Filters for Undergrads"
 # located at http://greg.czerniak.info/node/5.
 
+# --------------------------------------------------------------------------------------------#
+# OBS: ALGORITMO MODIFICADO POR ALYNNE FERREIRA E MATEUS RODRIGUES                            #
+# quantidade de números, nome do arquivo com os valores verdadeiros, nome do arquivo com erro #
+#                                                                                             #
+# argv[1] - quantidade de valores                                                             #
+# argv[2] - arquico com valor real                                                            #
+# argv[3] - arquivo de entrada (com erros)                                                    #
+# --------------------------------------------------------------------------------------------#
+
+
 import pylab
 import math
 import random
 import numpy
 import sys
-
-#argv[1] - quantidade de valores
-#argv[2] - arquico com valor real
-#argv[3] - arquivo de entrada (com erros)
 
 # Simulates the classic physics problem of a cannon shooting a ball in a
 # parabolic arc.  In addition to giving "true" values back, you can also ask
