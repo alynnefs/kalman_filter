@@ -1,9 +1,9 @@
 import sys
 import matplotlib.pyplot as plt
 
-arq_in = open('%s' %sys.argv[1],'r')
-arq_out = open('%s' %sys.argv[2],'r')
-arq_real = open('%s' %sys.argv[3],'r')
+arq_real = open('%s' %sys.argv[1],'r')
+arq_in = open('%s' %sys.argv[2],'r')
+arq_out = open('%s' %sys.argv[3],'r')
 
 entrada = []
 saida = []

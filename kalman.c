@@ -63,6 +63,6 @@ char filename[30],file_out[30];
 	result = rint(update(data[i]));
 	fprintf(myFileOut, "%d\n", result); //result é int
     }
-//	fclose(file_out);
-	return 0;
+
+    return 0;
 }

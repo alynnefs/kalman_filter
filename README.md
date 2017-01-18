@@ -7,8 +7,8 @@ sudo apt-get install python-tk
 
 gcc kalman.c -lm -o kalmancomp
 
-python gerador.py 3000 real input
+python voltage.py 800 real input
 
 ./kalmancomp input output
 
-python gera_grafico.py input.txt output.txt real.txt 
+python gera_grafico.py real.txt input.txt output.txt
