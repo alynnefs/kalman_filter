@@ -13,7 +13,7 @@ double result;
 // atualizacao de medidas com base no filtro de kalman
 void measurementUpdate(){
  	K = (P + Q) / (P + Q + R);
- 	P = R * (P + Q) / (R + P + Q);
+ 	P = R * (P + Q)/(R + P + Q);
 }
 
 // soma com k anterior
